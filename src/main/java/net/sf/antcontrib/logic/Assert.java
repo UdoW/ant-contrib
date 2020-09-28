@@ -15,7 +15,7 @@
  */
 package net.sf.antcontrib.logic;
 
-import net.sf.antcontrib.logic.condition.BooleanConditionBase;
+import net.sf.antcontrib.logic.condition.ContribConditionBase;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
@@ -29,7 +29,7 @@ import org.apache.tools.ant.taskdefs.condition.Equals;
  *
  * @author <a href="mailto:mattinger@yahoo.com">Matthew Inger</a>
  */
-public class Assert extends BooleanConditionBase {
+public class Assert extends ContribConditionBase {
     /**
      * Field message.
      */
@@ -100,9 +100,9 @@ public class Assert extends BooleanConditionBase {
     /**
      * Method createBool.
      *
-     * @return BooleanConditionBase
+     * @return ContribConditionBase
      */
-    public BooleanConditionBase createBool() {
+    public ContribConditionBase createBool() {
         return this;
     }
 

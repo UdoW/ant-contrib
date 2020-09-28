@@ -36,18 +36,9 @@
       <p>
         The assert task may contain a single conditional element known
         by Ant, or one of the following additional conditions:
-        <a href="more_conditions.html#IfPropertyTrue" title="More
-        Conditions">IfPropertyTrue</a>,
-        <a href="more_conditions.html#IfPropertyFalse" title="More
-        Conditions">IfPropertyFalse</a>,
-        <a href="more_conditions.html#StartsWith" title="More
-        Conditions">StartsWith</a>,
-        <a href="more_conditions.html#EndsWith" title="More
-        Conditions">EndsWith</a>,
-        <a href="more_conditions.html#IsGreaterThan" title="More
-        Conditions">IsGreaterThan</a>,
-        <a href="more_conditions.html#IsLessThan" title="More
-        Conditions">IsLessThan</a> and conditions. See the
+        <a href="if.html#IsEmpty" title="If Task - Additional Conditions">IsEmpty</a>,
+        <a href="if.html#IsGreaterThan" title="If Task - Additional Conditions">IsGreaterThan</a>,
+        <a href="if.html#IsLessThan" title="If Task - Additional Conditions">IsLessThan</a> and conditions. See the
         <a href="if.html">if task</a> for examples of using these
         conditionals.
       </p>

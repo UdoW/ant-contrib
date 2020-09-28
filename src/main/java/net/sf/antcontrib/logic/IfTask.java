@@ -21,7 +21,8 @@ import java.util.List;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.taskdefs.Sequential;
 import org.apache.tools.ant.taskdefs.condition.Condition;
-import org.apache.tools.ant.taskdefs.condition.ConditionBase;
+
+import net.sf.antcontrib.logic.condition.ContribConditionBase;
 
 /**
  * Perform some tasks based on whether a given condition holds true or
@@ -96,10 +97,10 @@ import org.apache.tools.ant.taskdefs.condition.ConditionBase;
  *
  * @author <a href="mailto:stefan.bodewig@freenet.de">Stefan Bodewig</a>
  */
-public class IfTask extends ConditionBase {
+public class IfTask extends ContribConditionBase {
     /**
      */
-    public static final class ElseIf extends ConditionBase {
+    public static final class ElseIf extends ContribConditionBase {
         /**
          * Field thenTasks.
          */
@@ -130,7 +131,7 @@ public class IfTask extends ConditionBase {
             if (countConditions() < 1) {
                 throw new BuildException("You must nest a condition into <elseif>");
             }
-            Condition c = (Condition) getConditions().nextElement();
+			Condition c = getConditions().nextElement();
 
             return c.eval();
         }
@@ -154,7 +155,7 @@ public class IfTask extends ConditionBase {
     /**
      * Field elseIfTasks.
      */
-    private final List<ElseIf> elseIfTasks = new ArrayList<ElseIf>();
+	private final List<ElseIf> elseIfTasks = new ArrayList<>();
     /**
      * Field elseTasks.
      */
@@ -209,7 +210,7 @@ public class IfTask extends ConditionBase {
         if (countConditions() < 1) {
             throw new BuildException("You must nest a condition into <if>");
         }
-        Condition c = (Condition) getConditions().nextElement();
+		Condition c = getConditions().nextElement();
         if (c.eval()) {
             if (thenTasks != null) {
                 thenTasks.execute();

@@ -23,8 +23,7 @@
     <p>
       This task doesn't have any attributes, the condition to test is
       specified by a nested element - see the documentation of the
-      <a href="https://ant.apache.org/manual/Tasks/condition.html">condition
-      task</a> for a complete list of nested elements.
+      <a href="https://ant.apache.org/manual/Tasks/conditions.html">conditions</a> for a list of nested elements and notice the additional conditions section below.
     </p>
     <p>
       Just like the <code>condition</code> task, only a single
@@ -84,6 +83,129 @@
  </else>
 </if>]]></source>
     </subsection>
+    </section>
+    <section name="Additional conditions">
+    
+      <subsection id="IsEmpty" name="IsEmpty">
+        <p>
+          Tests whether the argument is not set or an empty String.
+        </p>
+        <table summary="IsEmpty Attributes" border="1" cellpadding="2" cellspacing="0">
+          <caption>IsEmpty Attributes</caption>
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              <th>Description</th>
+              <th>Required</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>property</td>
+              <td>The name of the property to check.</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>trim</td>
+              <td>Trims the property. Boolean.</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+        <source><![CDATA[<property name="empty_property" value=""/>
+
+<!-- evaluates to true -->
+<isempty property="empty_property"/>
+<isempty property="unknown_property"/>
+
+<property name="set_property" value="helloworld"/>
+
+<!-- evaluates to false -->
+<isempty property="set_property"/>]]></source>
+      </subsection>
+      
+      <subsection id="IsGreaterThan" name="IsGreaterThan">
+        <p>
+          Tests whether the first argument is greater than the second
+          argument. Will automatically treat the arguments as numbers
+          if both arguments consists of only the characters 0 through
+          9 and optionally a decimal point. Otherwise, a String
+          comparison is used.
+        </p>
+        <table summary="IsGreaterThan Attributes" border="1" cellpadding="2" cellspacing="0">
+          <caption>IsGreaterThan Attributes</caption>
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              <th>Description</th>
+              <th>Required</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>arg1</td>
+              <td>The first argument.</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>arg2</td>
+              <td>The second argument.</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>trim</td>
+              <td>Trim the arguments. Boolean.</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+        <source><![CDATA[<!-- evaluates to true -->
+<isgreaterthan arg1="6.02" arg2="4"/>
+
+<!-- evaluates to false -->
+<isgreaterthan arg1="bar" arg2="foo"/>]]></source>
+      </subsection>
+      <subsection id="IsLessThan" name="IsLessThan">
+        <p>
+          Tests whether the first argument is less than the second
+          argument. Will automatically treat the arguments as numbers
+          if both arguments consists of only the characters 0 through
+          9 and optionally a decimal point. Otherwise, a String
+          comparison is used.
+        </p>
+        <table summary="IsLessThan Attributes" border="1" cellpadding="2" cellspacing="0">
+          <caption>IsLessThan Attributes</caption>
+          <thead>
+            <tr>
+              <th>Attribute</th>
+              <th>Description</th>
+              <th>Required</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>arg1</td>
+              <td>The first argument.</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>arg2</td>
+              <td>The second argument.</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>trim</td>
+              <td>Trim the arguments. Boolean.</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+        <source><![CDATA[<!-- evaluates to false -->
+<islessthan arg1="6.02" arg2="4"/>
+
+<!-- evaluates to true -->
+<islessthan arg1="bar" arg2="foo"/>]]></source>
+      </subsection>
     </section>
   </body>
 </document>
