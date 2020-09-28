@@ -28,7 +28,7 @@
   <artifactId>ant-contrib</artifactId>
   <packaging>jar</packaging>
   <name>ant-contrib</name>
-  <version>1.0b5</version>
+  <version>1.0b6</version>
   <description>Ant Contrib tasks for Apache Ant</description>
   <url>https://github.com/top-logic/ant-contrib/</url>
   <issueManagement>
@@ -223,7 +223,7 @@
             <comparisonArtifact>
               <groupId>net.sf.antcontrib</groupId>
               <artifactId>ant-contrib</artifactId>
-              <version>1.0b5</version>
+              <version>1.0b6</version>
             </comparisonArtifact>
           </comparisonArtifacts>
         </configuration>

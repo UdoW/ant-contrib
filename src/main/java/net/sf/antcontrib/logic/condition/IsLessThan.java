@@ -96,7 +96,8 @@ public final class IsLessThan implements Condition {
      * @throws BuildException if arguments are missing
      * @see org.apache.tools.ant.taskdefs.condition.Condition#eval()
      */
-    public boolean eval() throws BuildException {
+	@Override
+	public boolean eval() throws BuildException {
         if (arg1 == null || arg2 == null) {
             throw new BuildException("both arg1 and arg2 are required in "
                     + "less than");
