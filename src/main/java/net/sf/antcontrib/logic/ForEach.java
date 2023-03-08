@@ -390,6 +390,7 @@ public class ForEach extends Task {
      * @param set FileSet
      * @deprecated Use createPath instead.
      */
+	@Deprecated 
     public void addFileset(FileSet set) {
         log("The nested fileset element is deprecated, use a nested path "
                         + "instead",
