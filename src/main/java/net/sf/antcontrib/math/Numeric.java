@@ -65,16 +65,16 @@ public class Numeric implements Evaluateable {
             datatype = "double";
         }
         if (datatype.equals("int")) {
-            return new Integer(value);
+            return Integer.valueOf(value);
         }
         if (datatype.equals("long")) {
-            return new Long(value);
+            return Long.valueOf(value);
         }
         if (datatype.equals("float")) {
-            return new Float(value);
+            return Float.valueOf(value);
         }
         if (datatype.equals("double")) {
-            return new Double(value);
+            return Double.valueOf(value);
         }
         throw new BuildException("Invalid datatype.");
     }
